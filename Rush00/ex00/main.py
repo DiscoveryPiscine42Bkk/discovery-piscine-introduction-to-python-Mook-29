@@ -4,11 +4,9 @@ from datetime import datetime
 
 tasks = []
 
-def load_tasks():
-    global tasks
-    if os.path.exists("tasks.json"):
-        with open("tasks.json", "r", encoding="utf-8") as file:
-            tasks = json.load(file)
+if os.path.exists("tasks.json"):
+    with open("tasks.json", "r", encoding="utf-8") as file:
+        tasks = json.load(file)
 
 def save_tasks():
     with open("tasks.json", "w", encoding="utf-8") as file:
